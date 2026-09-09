@@ -8,3 +8,10 @@ def test_find_max(numbers, expected):
 
 def test_count_evens(numbers, expected):
     assert count_evens(numbers) == expected
+
+def test_add():
+    assert add(2, 3) == 7
+
+def test_subtract():
+    assert subtract(5, 3) == 2
+
