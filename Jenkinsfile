@@ -1,22 +1,21 @@
-pipeline{
-    agent any stages{
-        stage('checkout'){
-            steps{
-                git branch : 'main' , url :'https://github.com/gokul142006/junk.git'
+pipeline {
+    agent any 
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/gokul142006/junk.git'
             }
         }
-
-        stage('install Dependencies'){
-            steps{
+        stage('Install Dependencies') {
+            steps {
                 bat 'pip install -r requirements.txt'
             }
         }
-
-        stage('Ru Unit Tests'){
-            steps{
+        stage('Run Unit Tests') {
+            steps {
                 bat 'pytest test_app.py'
             }
         }
-
     }
 }
